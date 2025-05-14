@@ -1,5 +1,6 @@
 #pragma once
 #include "Violation.h"
+#include "ArrayTemplate.h"
 
 struct  Driver
 {
@@ -30,5 +31,14 @@ struct  Driver
 			arr_viol[i].printViol();
 		}
 		cout << endl;
+	}
+
+	void addNewViol() {
+		Violation obj;
+		cout << "Введіть інформацію про НОВЕ порушення:\n";
+		obj.fillViol();
+
+		addItemBack(arr_viol, size_viol, obj);
+		cout << "Нове порушення зафыксовано!!!\n\n";
 	}
 };
