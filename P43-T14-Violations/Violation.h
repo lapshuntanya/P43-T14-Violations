@@ -8,5 +8,7 @@ struct  Violation
 	float fine = 0;			//Сума штрафу
 
 
+	void fillViol() {
 
+	}
 };
