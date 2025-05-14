@@ -18,4 +18,8 @@ struct  Violation
 		cout << "введіть суму штафу (грн.): ";
 		cin >> fine;
 	}
+
+	void printViol() {
+		cout << "\t" << date_viol.toString("%d.%m.%Y") << " Штраф: " << fine << " грн. => " << info << endl;
+	}
 };
