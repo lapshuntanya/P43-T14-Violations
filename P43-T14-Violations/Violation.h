@@ -9,6 +9,13 @@ struct  Violation
 
 
 	void fillViol() {
-
+		cout << "¬вед≥ть дату порушенн€ (dd mm yyyy): ";
+		cin >> date_viol.day >> date_viol.month >> date_viol.year;
+		cout << "¬вед≥ть опис (максимум 99 символ≥в): ";
+		//≤гноруЇмо попередн≥й ентер
+		cin.ignore();
+		cin.getline(info, 100);
+		cout << "введ≥ть суму штафу (грн.): ";
+		cin >> fine;
 	}
 };
