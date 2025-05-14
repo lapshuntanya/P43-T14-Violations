@@ -45,7 +45,7 @@ int main()
 	//==================================================
 	//==================================================
 
-	int N = 3;
+	int NDrivers = 3;
 	Driver* arr_drivers = new Driver[3]{
 		{
 			"Пупкін Василь Вікторович", "BI1234IO", 2, new Violation[2]{
@@ -84,7 +84,42 @@ int main()
 		cout << ">>> ";
 		cin >> menu;
 	 
+		switch (menu)
+		{
+		default: cout << "Помилка вибору.\n";  break;
+		case 0: cout << "До побачення =) \n";  break;
+		case 1:
+			for (int i = 0; i < NDrivers; i++)
+			{
+				arr_drivers[i].printDriver();
+			}
+			break;
+		case 2:
+		{
+			cout << "Введіть номер авто (АХ0000АХ): ";
+			cin >> text;
+			int id = -1;
+			for (int i = 0; i < NDrivers; i++)
+			{
+				if (_stricmp(arr_drivers[i].carNumber, text) == 0)
+				{
+					id = i; break;
+				}
+			}
 
+			if (id == -1) {
+				cout << "----- НОВИЙ ПОРУШНИК ------\n";
+				cin.ignore();
+				tmp_driver.fillDriver();
+				addItemBack(arr_drivers, NDrivers, tmp_driver);
+			}
+			else {
+				cout << "----- НОВЕ ПОРУШЕННЯ ------\n";
+				arr_drivers[id].addNewViol();
+			}
+		}
+			break;
+		}
 
 	} while (menu != 0);
 }
