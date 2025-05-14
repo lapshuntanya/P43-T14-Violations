@@ -19,4 +19,15 @@ struct  Driver
 		arr_viol = new Violation[1];
 		arr_viol[0].fillViol();
 	}
+
+	void printDriver() {
+		cout << "Водій: " << name << endl;
+		cout << "Авто:  " << carNumber << endl;
+		cout << "Порушень:  " << size_viol << endl;
+		for (int i = 0; i < size_viol; i++)
+		{
+			cout << i + 1 << ". ";
+			arr_viol[i].printViol();
+		}
+	}
 };
