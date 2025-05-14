@@ -1,6 +1,7 @@
 ﻿#include "Date.h"
 #include "Violation.h"
 #include <Windows.h>
+#include "Driver.h"
 
 int main()
 {
@@ -19,13 +20,25 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Violation a{ {1, 1, 2000}, "Перевищення швидкости 200 км/год", 15'000 };
+	/*Violation a{{1, 1, 2000}, "Перевищення швидкости 200 км/год", 15'000};
 	Violation b; // {0, 0, 0}, "", 0
 	b.fillViol();
 
 	cout << "================================\n";
 	a.printViol();
-	b.printViol();
+	b.printViol();*/
+
+	Driver a{ "Pupkin Oleh Viktorovych", "BI1234IO", 2, new Violation[2]{
+		{{1, 1, 2025}, "Перевищення швидкості 200 км/год", 15'000},
+		{{14, 5, 2025}, "Проїзд на заборонений знак", 4'500}
+	} };
+
+	Driver b;
+	b.fillDriver();
+	cout << "======================================\n";
+
+	a.printDriver();
+	b.printDriver();
 
 }
 

@@ -29,5 +29,6 @@ struct  Driver
 			cout << i + 1 << ". ";
 			arr_viol[i].printViol();
 		}
+		cout << endl;
 	}
 };
